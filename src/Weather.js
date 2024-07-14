@@ -40,7 +40,7 @@ export default function Weather(props) {
 
   if (weatherData.ready) {
     return (
-      <div className="WeatherApp">
+      <div className="Weather">
         <form onSubmit={handleSubmit}>
           <div className="row">
             <div className="col-9 ">
@@ -68,15 +68,15 @@ export default function Weather(props) {
         <footer>
           This project was coded by{" "}
           <a
-            href="https://www.shecodes.io/"
+            href="https://github.com/Carooh55"
             target="_blank"
             rel="noopener noreferrer"
           >
-            SheCodes
+            Makhadzi
           </a>{" "}
           and is{" "}
           <a
-            href="https://github.com/shecodesio/weather"
+            href="https://github.com/Carooh55/weatherapp-carooh"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -84,7 +84,7 @@ export default function Weather(props) {
           </a>{" "}
           and{" "}
           <a
-            href="https://shecodes-weather.netlify.app/"
+            href="https://669428fa2fc3dbab528a04d0--reactapp-weatherc.netlify.app/"
             target="_blank"
             rel="noopener noreferrer"
           >
