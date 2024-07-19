@@ -66,7 +66,6 @@ export default function Weather(props) {
           coordinates={weatherData.coordinates}
           city={weatherData.city}
         />
-
         <footer>
           This project was coded by{" "}
           <a
