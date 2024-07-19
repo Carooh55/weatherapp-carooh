@@ -7,8 +7,10 @@ import "./Weather.css";
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
+  const [isLoading, setIsLoading] = useState(false);
 
   function handleResponse(response) {
+    setIsLoading(false);
     setWeatherData({
       ready: true,
       coordinates: response.data.coordinates,
@@ -32,10 +34,12 @@ export default function Weather(props) {
   }
 
   function search() {
+    setIsLoading(true);
     const apiKey = "eac360db5fc86ft86450f3693e73o43f";
-    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+    let apiUrl = `https://api.openweathermap.org/data/3.0/current?query=${city}&key=${apiKey}&units=metric`;
 
     axios.get(apiUrl).then(handleResponse);
+    setIsLoading(false);
   }
 
   if (weatherData.ready) {
@@ -96,6 +100,8 @@ export default function Weather(props) {
     );
   } else {
     search();
-    return "Loading...";
+    if (isLoading) {
+      return null;
+    }
   }
 }
